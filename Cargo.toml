@@ -33,7 +33,7 @@ ethers = { version = "2.0.10", features = ["rustls", "ws", "ipc"] }
 ethers-core = "2.0.10"
 eyre = "0.6.8"
 futures = "0.3.29"
-governor = "0.6.0"
+governor = { version = "0.6", default-features = false, features = ["std"] }
 hex = "0.4.3"
 heck = "0.4.1"
 indexmap = "2.1.0"

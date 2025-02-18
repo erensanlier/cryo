@@ -3,7 +3,6 @@ use std::sync::Arc;
 use ethers::prelude::*;
 use governor::{
     clock::MonotonicClock,
-    middleware::NoOpMiddleware,
     state::{direct::NotKeyed, InMemoryState},
 };
 use tokio::{
@@ -14,7 +13,7 @@ use tokio::{
 use crate::CollectError;
 
 /// RateLimiter based on governor crate
-pub type RateLimiter = governor::RateLimiter<NotKeyed, InMemoryState, MonotonicClock, NoOpMiddleware>;
+pub type RateLimiter = governor::RateLimiter<NotKeyed, InMemoryState, MonotonicClock>;
 
 /// Options for fetching data from node
 #[derive(Clone, Debug)]
